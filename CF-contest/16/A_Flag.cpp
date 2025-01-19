@@ -36,7 +36,5 @@ int main()
     }
 
     cout<<(flag?"YES\n":"NO\n");
-    // if(flag) cout<<"YES\n";
-    // else cout<<"NO\n";
     return 0;
 }
