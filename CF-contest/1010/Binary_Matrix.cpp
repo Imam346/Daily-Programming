@@ -4,30 +4,39 @@
 ----------------------------------------*/
 #include<bits/stdc++.h>
 using namespace std;
+typedef long long ll;
+ll cal_min(ll x,ll n,ll m)
+{
+    for(int i=1;i<=n;i++){
+        x=x/2;
+        if(x==0){break;}
+    }
+    for(int i=1;i<=m;i++){
+        x=(x+1)/2;
+        if(x==0 || x==1){break;}
+    }
+    return x;
+}
+ll cal_max(ll x, ll n,ll m)
+{
+    for(int i=1;i<=m;i++){
+        x=(x+1)/2;
+        if(x==0 || x==1){break;}
+    }
+    for(int i=1;i<=n;i++){
+        x=x/2;
+        if(x==0){break;}
+    }
+    return x;
+}
 inline void solve()
 {
-    int n,m; cin>>n>>m;
-    vector<string>mat(n);
-    for(int i=0;i<n;i++){
-        cin>>mat[i];
-    }
-    int mx1 = 0;
-    for(int i=0;i<n;i++){
-        int x=0;
-        for(int j=0;j<m;j++){
-            x^=(mat[i][j]-'0');
-        }
-        if(x)mx1++;
-    }
-    int mx2 = 0;
-    for(int j=0;j<m;j++){
-        int x=0;
-        for(int i=0;i<n;i++){
-            x^=(mat[i][j]-'0');
-        }
-        if(x)mx2++;
-    }
-    cout<<max(mx1,mx2)<<'\n';
+    ll x,n,m;
+    cin>>x>>n>>m;
+    
+    ll mn = cal_min(x,n,m);
+    ll mx = cal_max(x,n,m);
+    cout<<mn<<" "<<mx<<'\n';
 }   
 int main()
 {
