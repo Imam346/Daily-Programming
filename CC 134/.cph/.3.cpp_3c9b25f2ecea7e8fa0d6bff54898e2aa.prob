@@ -1,0 +1,1 @@
+{"name":"Local: 3","url":"d:\\Practice\\Codechef\\134\\3.cpp","tests":[{"id":1715785593289,"input":"3\n5\nRPRRS\n1\nS\n4\nRRRR","output":"4\n1\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Practice\\Codechef\\134\\3.cpp","group":"local","local":true}
