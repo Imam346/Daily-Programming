@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+#define gcd(a, b) __gcd(a, b)
+#define lcm(a, b) ((a/gcd(a,b))*b)
+using namespace std;
+
+//pbds
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+//Speed
+#define Code ios_base::sync_with_stdio(false);
+#define By cin.tie(NULL);
+#define Imam cout.tie(NULL);
+
+int32_t main()
+{
+    Code By Imam
+    int t; cin>>t;
+    while(t--)
+    {
+        int n,x;
+        cin>>n>>x;
+        
+        ll ans=0;
+        for(ll a=1;a<=n && a<=x; a++)
+        {
+            for(ll b=1;a*b<=n && a+b<=x; b++)
+            {
+                ll c1 = max(0LL, x-a-b), c2 = max(0LL, (n-a*b)/(a+b));
+                ans += min(c1, c2);
+            }
+        }
+        cout<<ans<<endl;
+    }
+    return 0;
+}
