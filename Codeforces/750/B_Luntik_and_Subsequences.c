@@ -7,11 +7,11 @@
 #define max(a,b) (((a)>(b))?(a):(b))
 #define ll long long
 
-int Pow[61];
+ll Pow[61];
 void pre_compute()
 {
     Pow[0]=1;
-    for(int i=1;i<61;i++){
+    for(ll i=1;i<61;i++){
         Pow[i]=Pow[i-1]*2;
     }
 }
