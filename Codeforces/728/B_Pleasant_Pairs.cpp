@@ -17,7 +17,7 @@ inline void solve()
     // for(auto [x,y]:ar)cout<<x<<" "<<y<<endl;
     
     int ans=0;
-    for(int i=0;i*i<n;i++){
+    for(int i=0;i<n/2;i++){
         ll a=ar[i].first;
         ll b=ar[i].second;
         for(int j=i+1;j<n;j++){
