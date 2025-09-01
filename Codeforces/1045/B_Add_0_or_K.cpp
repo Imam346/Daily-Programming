@@ -1,25 +1,21 @@
 /*----------------------------------------
     author:  Imam
-    created: 24.08.2025 23:51:36
+    created: 26.08.2025 21:29:32
 ----------------------------------------*/
 #include<bits/stdc++.h>
 using namespace std;
+using ll=uint64_t;
 inline void solve()
 {
-    int n; cin>>n;
-    int x=n, y=n;
-    int ans=0;
-    for(int i=1;i<=n;i++){
-        int val; cin>>val;
-        if(x>y) swap(x,y);
-        if(val<=x) x=val;
-        else if(val<=y) y=val;
-        else{
-            ans++;
-            x=val;
-        }
+    ll n,k; cin>>n>>k;
+    vector<ll> ar(n);
+    for(int i=0;i<n;i++){
+        ll val; cin>>val;
+        ll rem=val%(k+1);
+        ar[i]=val+k*rem;
     }
-    cout<<ans<<'\n';
+    for(auto val:ar) cout<<val<<" ";
+    cout<<'\n';
 }
 int main()
 {

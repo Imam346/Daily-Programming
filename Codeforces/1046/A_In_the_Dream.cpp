@@ -1,25 +1,19 @@
 /*----------------------------------------
     author:  Imam
-    created: 24.08.2025 23:51:36
+    created: 28.08.2025 20:54:18
 ----------------------------------------*/
 #include<bits/stdc++.h>
 using namespace std;
+inline bool arrange(int x, int y){
+    return x<=2*(y+1) && y<=2*(x+1);
+}
 inline void solve()
 {
-    int n; cin>>n;
-    int x=n, y=n;
-    int ans=0;
-    for(int i=1;i<=n;i++){
-        int val; cin>>val;
-        if(x>y) swap(x,y);
-        if(val<=x) x=val;
-        else if(val<=y) y=val;
-        else{
-            ans++;
-            x=val;
-        }
-    }
-    cout<<ans<<'\n';
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    bool first = arrange(a,b);
+    bool second = arrange(c-a, d-b);
+    cout<<((first && second)?"YES":"NO")<<'\n';
 }
 int main()
 {

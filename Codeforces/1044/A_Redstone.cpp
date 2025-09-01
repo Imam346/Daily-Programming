@@ -1,25 +1,20 @@
 /*----------------------------------------
     author:  Imam
-    created: 24.08.2025 23:51:36
+    created: 24.08.2025 20:44:01
 ----------------------------------------*/
 #include<bits/stdc++.h>
 using namespace std;
 inline void solve()
 {
     int n; cin>>n;
-    int x=n, y=n;
-    int ans=0;
-    for(int i=1;i<=n;i++){
-        int val; cin>>val;
-        if(x>y) swap(x,y);
-        if(val<=x) x=val;
-        else if(val<=y) y=val;
-        else{
-            ans++;
-            x=val;
-        }
+    map<int,int>mp;
+    bool flag=false;
+    for(int x,i=1;i<=n;i++){
+        cin>>x;
+        if(mp[x])flag=true;
+        mp[x]++;
     }
-    cout<<ans<<'\n';
+    cout<<(flag?"YES":"NO")<<'\n';
 }
 int main()
 {
